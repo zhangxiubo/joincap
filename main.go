@@ -109,7 +109,7 @@ func joincap(args []string) error {
 		log.Printf("writing to %s\n", outputFile.Name())
 	}
 
-	writer := pcapgo.NewWriter(bufferedFileWriter)
+	writer := pcapgo.NewWriterNanos(bufferedFileWriter)
 	writer.WriteFileHeader(maxSnaplen, linkType)
 
 	// Main loop
